@@ -206,6 +206,8 @@ function renderSchema(schema, options) {
     printer('\n</details>')
   }
 
+  printer('<div class="graphql-markdown--contents">')
+
   if (query) {
     printer(
       `\n${'#'.repeat(headingLevel + 1)} Query${
@@ -307,6 +309,8 @@ function renderSchema(schema, options) {
   if (epilogue) {
     printer(`\n${epilogue}`)
   }
+
+  printer('</div>')
 
   if (!skipWrap) {
     printer(`</div>`)
