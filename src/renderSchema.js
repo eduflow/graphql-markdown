@@ -101,6 +101,7 @@ function renderSchema(schema, options) {
   const title = options.title || 'Schema Types'
   const skipTitle = options.skipTitle || false
   const skipTableOfContents = options.skipTableOfContents || false
+  const openTableOfContents = options.openTableOfContents || false
   const prologue = options.prologue || ''
   const epilogue = options.epilogue || ''
   const printer = options.printer || console.log
@@ -155,7 +156,11 @@ function renderSchema(schema, options) {
   }
 
   if (!skipTableOfContents) {
-    printer('<details class="graphql-markdown--toc">')
+    printer(
+      `<details class="graphql-markdown--toc" ${
+        openTableOfContents ? 'open' : ''
+      }>`
+    )
     printer('  <summary><strong>Table of Contents</strong></summary>\n')
     if (query) {
       printer('  * [Query](#query)')

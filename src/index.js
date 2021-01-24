@@ -32,6 +32,7 @@ function printHelp(console) {
     --title <string>       Change the top heading title (default: 'Schema Types')
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
+    --toc-open             Include ToC open by default
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the
@@ -79,6 +80,7 @@ function run(
         prologue: args.prologue,
         epilogue: args.epilogue,
         skipTableOfContents: args['toc'] === false,
+        openTableOfContents: args['toc-open'],
         headingLevel: args['heading-level']
       }
       if (options.title === false) {
