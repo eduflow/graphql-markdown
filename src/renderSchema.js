@@ -155,7 +155,7 @@ function renderSchema(schema, options) {
   }
 
   if (!skipTableOfContents) {
-    printer('<details>')
+    printer('<details class="graphql-markdown--toc">')
     printer('  <summary><strong>Table of Contents</strong></summary>\n')
     if (query) {
       printer('  * [Query](#query)')
