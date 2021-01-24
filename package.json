@@ -1,5 +1,5 @@
 {
-  "name": "graphql-markdown",
+  "name": "@peergrade/graphql-markdown",
   "version": "5.2.0",
   "description": "Generate documentation for your GraphQL schema in Markdown",
   "main": "src/index.js",
