@@ -100,6 +100,7 @@ function renderSchema(schema, options) {
   options = options || {}
   const title = options.title || 'Schema Types'
   const skipTitle = options.skipTitle || false
+  const skipWrap = options.skipWrap || false
   const skipTableOfContents = options.skipTableOfContents || false
   const openTableOfContents = options.openTableOfContents || false
   const prologue = options.prologue || ''
@@ -146,6 +147,10 @@ function renderSchema(schema, options) {
   sortBy(enums, 'name')
   sortBy(scalars, 'name')
   sortBy(interfaces, 'name')
+
+  if (!skipWrap) {
+    printer(`<div class="graphql-markdown">`)
+  }
 
   if (!skipTitle) {
     printer(`${'#'.repeat(headingLevel)} ${title}\n`)
@@ -301,6 +306,10 @@ function renderSchema(schema, options) {
 
   if (epilogue) {
     printer(`\n${epilogue}`)
+  }
+
+  if (!skipWrap) {
+    printer(`</div>`)
   }
 }
 

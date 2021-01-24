@@ -33,6 +33,7 @@ function printHelp(console) {
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
     --toc-open             Include ToC open by default
+    --no-wrap              Do not wrap output in a div
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the
@@ -81,7 +82,8 @@ function run(
         epilogue: args.epilogue,
         skipTableOfContents: args['toc'] === false,
         openTableOfContents: args['toc-open'],
-        headingLevel: args['heading-level']
+        headingLevel: args['heading-level'],
+        skipWrap: args['wrap'] === false
       }
       if (options.title === false) {
         options.title = ''
